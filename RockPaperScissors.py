@@ -19,9 +19,10 @@ userselect = {
 usertrue = ['evet', 'yes', 'olur']
 userfalse = ['yok', 'hayır', 'no', 'hayir', 'olmaz', 'çık', 'exit', 'cik']
 
+
 def winandlose(userselection, inputn):
-    pcselection = pcrandom()
     pcput = r.randint(1,3)
+    pcselection = randompc.get(pcput)
     if (pcput == 3 and userselection == 1) or (pcput == 1 and userselection == 2) or (pcput == 2 and userselection == 3):
         return f'Sen {inputn} dedin. Bilgisayar {pcselection} dedi.\nTebrikler sen kazandın!'
     elif (pcput == 1 and userselection == 3) or (pcput == 2 and userselection == 1) or (pcput == 3 and userselection == 2):
@@ -51,9 +52,6 @@ def hello():
         else:
             break
 
-def pcrandom():
-    random = r.randint(1,3)
-    return randompc.get(random)
 
 
 hello()
